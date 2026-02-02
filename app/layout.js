@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Official Printer Support",
-};
+};   
 
 export default function RootLayout({ children }) {
   return (
