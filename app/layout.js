@@ -19,31 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {/* Smartsupp Chat */}
-        <Script
-          id="smartsupp-chat"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              var _smartsupp = _smartsupp || {};
-              _smartsupp.key = 'dff8422295ec6cbc8cc612ea03de8f77b24176c4';
-              window.smartsupp||(function(d) {
-                var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-                s=d.getElementsByTagName('script')[0];
-                c=d.createElement('script');
-                c.type='text/javascript';c.charset='utf-8';c.async=true;
-                c.src='https://www.smartsuppchat.com/loader.js?';
-                s.parentNode.insertBefore(c,s);
-              })(document);
-            `,
-          }}
-        />
-
-        {children}
-      </body>
+     
     </html>
   );
 }
