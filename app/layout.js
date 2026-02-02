@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: `
               var _smartsupp = _smartsupp || {};
-              _smartsupp.key = 'dff8422295ec6cbc8cc612ea03de8f77b24176c4';
+              _smartsupp.key = 'b53c42595f25e9b3b5a5d723f465dfe0ea429a42';
               window.smartsupp||(function(d) {
                 var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
                 s=d.getElementsByTagName('script')[0];
