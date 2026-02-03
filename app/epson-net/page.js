@@ -1,4 +1,3 @@
-import Head from "next/head";
 import EpsonPrinter from "./epsonnet";
 
 export const metadata = {
@@ -10,7 +9,7 @@ const page = () => {
   return (
       <>
       <Head>
-  <title>Epson Printer Support</title>
+  <title>Error Canon Printer Support</title>
 </Head>
       <EpsonPrinter />
       </>
