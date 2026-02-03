@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import Head from "next/head";
 
   const hero = "/images/gif.gif";
   const printerImage = "/images/brother.png";
@@ -62,6 +63,9 @@ export default function BrotherPrinter() {
 
   return (
     <>
+     <Head>
+  <title>Driver Printer Support</title>
+</Head>
        <Header />
       {!loading ? (
         <>

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Contactpage from "./contactclient";
 
 export const metadata = {
@@ -7,6 +8,9 @@ export const metadata = {
 const page = () => {
   return (
     <>
+     <Head>
+  <title>Contact Printer Support</title>
+</Head>
      <Contactpage />
     </>
   );

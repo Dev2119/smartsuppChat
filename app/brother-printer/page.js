@@ -1,3 +1,4 @@
+import Head from "next/head";
 import BrotherPrinter from "./brotherprinter";
 export const metadata = {
   title: "Brother Printer Support",
@@ -5,6 +6,9 @@ export const metadata = {
 const page = () => {
   return (
    <>
+    <Head>
+  <title>Brother Printer Support</title>
+</Head>
      <BrotherPrinter />
    </>
   );
