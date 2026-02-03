@@ -4,10 +4,7 @@ import Script from "next/script";
 
 export default function SmartsuppScript() {
   return (
-    <Script
-      id="smartsupp-chat"
-      strategy="afterInteractive"
-    >
+    <Script id="smartsupp-chat" strategy="afterInteractive">
       {`
         var _smartsupp = _smartsupp || {};
         _smartsupp.key = '2996e5ea3ca8fbed95d0eb2aa8ef3007521fcb1e';
