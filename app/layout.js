@@ -1,9 +1,7 @@
-"use client"; // make this a client component
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { useEffect } from "react";
-import { initSmartsupp } from "../lib/smartsupp";
+import Script from "next/script";
+import Smartsupp from "./components/Smartsupp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,16 +15,17 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Official Printer Support",
-};
+};   
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    initSmartsupp();
-  }, []);
-
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+     <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+    
+      
+  <Smartsupp />
         {children}
       </body>
     </html>
