@@ -8,9 +8,7 @@ export const metadata = {
 const page = () => {
   return (
       <>
-      <Head>
-  <title>Error Canon Printer Support</title>
-</Head>
+   
       <EpsonPrinter />
       </>
   );
