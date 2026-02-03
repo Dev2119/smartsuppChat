@@ -1,12 +1,19 @@
-"use client";
-
-import { useEffect } from "react";
 import CanonPage from "./canonmain";
 
-export default function Page() {
-  useEffect(() => {
-    document.title = "Canon Printer Support";
-  }, []);
-
-  return <CanonPage />;
+export const metadata = {
+  title: "Canon Printer Support",
+};
+const page = () => {
+  return (
+   <>
+   <CanonPage />
+    
+   </>
+  );
 }
+
+export default page;
+
+
+
+
