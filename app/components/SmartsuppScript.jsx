@@ -1,12 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Script from "next/script";
 
 export default function SmartsuppScript() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.smartsupp) {
@@ -15,7 +14,7 @@ export default function SmartsuppScript() {
         title: document.title,
       });
     }
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <Script
