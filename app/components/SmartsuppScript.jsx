@@ -1,8 +1,18 @@
 "use client";
 
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Script from "next/script";
 
 export default function SmartsuppScript() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (window.smartsupp) {
+      window.smartsupp("recordPageView");
+    }
+  }, [pathname]);
+
   return (
     <Script
       id="smartsupp-chat"
