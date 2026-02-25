@@ -12,11 +12,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
     
-        <SmartsuppScript />
+      
 
 
 
         {children}
+          <SmartsuppScript />
       </body>
     </html>
   );
