@@ -1,17 +1,21 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 
 export default function SmartsuppScript() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (window.smartsupp) {
-      window.smartsupp("recordPageView");
+    if (typeof window !== "undefined" && window.smartsupp) {
+      window.smartsupp("recordPageView", {
+        url: window.location.href,
+        title: document.title,
+      });
     }
-  }, [pathname]);
+  }, [pathname, searchParams]);
 
   return (
     <Script
@@ -32,7 +36,7 @@ export default function SmartsuppScript() {
             c.type = 'text/javascript';
             c.charset = 'utf-8';
             c.async = true;
-            c.src = 'https://www.smartsuppchat.com/loader.js?';
+            c.src = 'https://www.smartsuppchat.com/loader.js';
             s.parentNode.insertBefore(c, s);
           })(document);
         `,
