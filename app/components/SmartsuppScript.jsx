@@ -1,17 +1,26 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
-export default function SmartsuppScript() {
+export default function ChatAndAnalytics() {
   const pathname = usePathname();
 
-  // Inject script once
+  // Track virtual pageviews in GA4
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag("event", "page_view", { page_path: pathname });
+      console.log("GA4 page view:", pathname);
+    }
+  }, [pathname]);
+
+  // Inject Smartsupp once
   useEffect(() => {
     if (!document.getElementById("smartsupp-script")) {
-      window._smartsupp = window._smartsupp || {};
-      window._smartsupp.key = "39f11ef21138bfb68c7b3e937d4bd7f68e17a4f4";
-
+      window._smartsupp = {
+        key: "39f11ef21138bfb68c7b3e937d4bd7f68e17a4f4",
+        url: window.location.href,
+      };
       const script = document.createElement("script");
       script.id = "smartsupp-script";
       script.src = "https://www.smartsuppchat.com/loader.js";
@@ -20,17 +29,10 @@ export default function SmartsuppScript() {
     }
   }, []);
 
-  // Track page view on route change
+  // Update URL for current page (chat session stays intact)
   useEffect(() => {
-    if (window.smartsupp) {
-      window.smartsupp("page", pathname, {
-        title: document.title,
-        url: window.location.href,
-      });
-    }
-
-    if (window.gtag) {
-      window.gtag("event", "page_view", { page_path: pathname });
+    if (window._smartsupp) {
+      window._smartsupp.url = window.location.href;
     }
   }, [pathname]);
 
