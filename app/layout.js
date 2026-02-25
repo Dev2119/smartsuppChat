@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <AutoRefresh />
+        <AutoRefresh />   {/* 👈 USE IT HERE */}
         {children}
         <SmartsuppScript />
       </body>
