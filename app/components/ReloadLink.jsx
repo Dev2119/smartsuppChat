@@ -3,7 +3,7 @@
 export default function ReloadLink({ href, children, className }) {
   const handleClick = (e) => {
     e.preventDefault();
-    window.location.href = href; // force full reload
+    window.location.href = href; // full reload
   };
 
   return (

@@ -1,6 +1,6 @@
 import "./globals.css";
-import SmartsuppScript from "./components/SmartsuppScript";
-import ReloadLink from "./components/ReloadLink";
+import SmartsuppScript from "../components/SmartsuppScript";
+import ReloadLink from "../components/ReloadLink";
 
 export const metadata = {
   title: "Printer Driver Support",
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         {/* Main page content */}
         <main>{children}</main>
 
-        {/* Smartsupp + GA4 tracking */}
+        {/* Smartsupp + GA4 */}
         <SmartsuppScript />
       </body>
     </html>

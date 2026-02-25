@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export default function SmartsuppScript() {
   const pathname = usePathname();
 
-  // Inject Smartsupp script only once
+  // Inject script once
   useEffect(() => {
     if (!document.getElementById("smartsupp-script")) {
       window._smartsupp = window._smartsupp || {};
@@ -20,19 +20,17 @@ export default function SmartsuppScript() {
     }
   }, []);
 
-  // Track page changes for SPA navigation
+  // Track page view on route change
   useEffect(() => {
     if (window.smartsupp) {
       window.smartsupp("page", pathname, {
         title: document.title,
         url: window.location.href,
       });
-      console.log("Smartsupp page:", pathname);
     }
 
     if (window.gtag) {
       window.gtag("event", "page_view", { page_path: pathname });
-      console.log("GA4 page view:", pathname);
     }
   }, [pathname]);
 
