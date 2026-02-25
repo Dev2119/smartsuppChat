@@ -10,7 +10,7 @@ export default function SmartsuppScript() {
       dangerouslySetInnerHTML={{
         __html: `
           var _smartsupp = _smartsupp || {};
-          _smartsupp.key = '2996e5ea3ca8fbed95d0eb2aa8ef3007521fcb1e';
+          _smartsupp.key = '39f11ef21138bfb68c7b3e937d4bd7f68e17a4f4';
 
           window.smartsupp || (function (d) {
             var s, c, o = smartsupp = function () {
