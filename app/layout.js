@@ -1,6 +1,6 @@
 import "./globals.css";
 import SmartsuppScript from "./components/SmartsuppScript";
-import AutoRefresh from "./components/AutoRefresh";
+import RouteReload from "./components/RouteReload";
 
 export const metadata = {
   title: "Printer Driver Support",
@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <AutoRefresh />   {/* 👈 USE IT HERE */}
+        <RouteReload />
         {children}
         <SmartsuppScript />
       </body>

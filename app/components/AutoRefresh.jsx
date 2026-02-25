@@ -1,15 +1,18 @@
 'use client'
 
-import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 
-export default function AutoRefresh() {
+export default function RouteReload() {
+  const pathname = usePathname()
+  const previousPath = useRef(pathname)
+
   useEffect(() => {
-    const interval = setInterval(() => {
+    if (previousPath.current !== pathname) {
+      previousPath.current = pathname
       window.location.reload()
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [])
+    }
+  }, [pathname])
 
   return null
 }
