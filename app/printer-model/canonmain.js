@@ -74,7 +74,7 @@ export default function CanonPage() {
       <div className="max-w-6xl mx-auto px-6 pt-8 pb-4">
         <div className="flex items-center gap-4">
           <div className="text-4xl font-black tracking-tight text-red-600 select-none">
-            Canon
+           
           </div>
           <a
             href="#top"
