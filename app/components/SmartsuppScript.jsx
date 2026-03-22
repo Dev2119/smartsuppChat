@@ -18,7 +18,7 @@ export default function ChatAndAnalytics() {
   useEffect(() => {
     if (!document.getElementById("smartsupp-script")) {
       window._smartsupp = {
-        key: "48277ab868c63b2d36ccfce49107270b5061d9c8",
+        key: "722415990c54cb84a076ae0ca6fae40d05b0bb30",
         url: window.location.href,
       };
       const script = document.createElement("script");
